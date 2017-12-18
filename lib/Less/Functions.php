@@ -485,7 +485,7 @@ class Less_Functions{
 
 		$revert = array('%21'=>'!', '%2A'=>'*', '%27'=>"'",'%3F'=>'?','%26'=>'&','%2C'=>',','%2F'=>'/','%40'=>'@','%2B'=>'+','%24'=>'$');
 
-		return new Less_Tree_Anonymous(strtr(rawurlencode($str->value), $revert));
+		return new Less_Tree_Anonymous(strtr(rawurlencode($str instanceof Less_Tree_Color ? $str->toRGB() : $str->value), $revert));
 	}
 
 
